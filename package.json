@@ -1,0 +1,19 @@
+{
+  "name": "todo-app",
+  "version": "1.0.0",
+  "description": "A feature-rich todo list application with local storage functionality",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "server": "http-server -p 8000"
+  },
+  "keywords": [
+    "todo",
+    "tasks",
+    "local-storage",
+    "vanilla-js",
+    "web-app"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}

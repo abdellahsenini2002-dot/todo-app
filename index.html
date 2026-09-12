@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo App - Local Storage</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>📝 My Todo List</h1>
+      <p class="subtitle">Stay organized and track your tasks</p>
+    </header>
+
+    <!-- Stats -->
+    <div class="stats">
+      <div class="stat-item">
+        <span class="stat-label">Total Tasks</span>
+        <span class="stat-value" id="totalTasks">0</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">Completed</span>
+        <span class="stat-value" id="completedTasks">0</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">Remaining</span>
+        <span class="stat-value" id="remainingTasks">0</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">Completion %</span>
+        <span class="stat-value" id="completionPercent">0%</span>
+      </div>
+    </div>
+
+    <!-- Input Section -->
+    <div class="input-section">
+      <div class="input-group">
+        <input 
+          type="text" 
+          id="todoInput" 
+          placeholder="Add a new task..."
+          class="todo-input"
+        >
+        <select id="categorySelect" class="category-select">
+          <option value="general">General</option>
+          <option value="work">Work</option>
+          <option value="personal">Personal</option>
+          <option value="shopping">Shopping</option>
+          <option value="health">Health</option>
+        </select>
+        <select id="prioritySelect" class="priority-select">
+          <option value="medium">Medium</option>
+          <option value="low">Low</option>
+          <option value="high">High</option>
+        </select>
+        <button id="addBtn" class="btn btn-primary">➕ Add</button>
+      </div>
+    </div>
+
+    <!-- Filter Section -->
+    <div class="filter-section">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="active">Active</button>
+      <button class="filter-btn" data-filter="completed">Completed</button>
+      <button class="filter-btn" data-filter="high">🔴 High</button>
+      <button class="filter-btn" data-filter="medium">🟡 Medium</button>
+      <button class="filter-btn" data-filter="low">🟢 Low</button>
+      <div class="filter-spacer"></div>
+      <button id="clearCompletedBtn" class="filter-btn btn-danger">🗑️ Clear Completed</button>
+      <button id="exportBtn" class="filter-btn">📥 Export</button>
+      <button id="importBtn" class="filter-btn">📤 Import</button>
+    </div>
+
+    <!-- Todo List -->
+    <div class="todo-list" id="todoList">
+      <!-- Todos will be inserted here -->
+    </div>
+
+    <!-- Empty State -->
+    <div class="empty-state" id="emptyState">
+      <p>🎉 No tasks! You're all caught up!</p>
+    </div>
+  </div>
+
+  <!-- Hidden file input for import -->
+  <input type="file" id="fileInput" accept=".json" style="display: none;">
+
+  <script src="js/storage.js"></script>
+  <script src="js/todo.js"></script>
+</body>
+</html>
